@@ -73,9 +73,5 @@ public class MailSend {
 		}
 	}
 
-//	public static void main(String[] args) throws Exception{
-//		sendMail( "tkdals99!@","snman016@gmail.com"); // 비밀번호 받이메일 , 제목, 내용
-//		
-//	}
 
 }
