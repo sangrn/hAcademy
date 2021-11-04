@@ -19,6 +19,7 @@ import javax.mail.internet.MimeMessage;
 	 * @author 김상민 <나중에 비밀번호를 발송하도록 바꿀것>
 	 *
 	 */
+
 public class MailSend {
 	public static void sendMail(String pw, String name) {		
 		// SMTP 설정
@@ -37,8 +38,8 @@ public class MailSend {
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
 				//변수를 받아와서 새팅하는 방법 확인 
-				String name = "snman016@gmail.com";
-				String pw = "tkdals99!@";
+				String name = "구글이메일 주소";
+				String pw = "구글비밀번호";
 				return new PasswordAuthentication(name, pw);
 			}
 
@@ -56,7 +57,7 @@ public class MailSend {
 			//	err = true; 
 			}
 
-			msg.setFrom(new InternetAddress("snman016@gmail.com", "TESTER"));
+			msg.setFrom(new InternetAddress("구글 이메일 주소", "TESTER"));
 			msg.setRecipient(Message.RecipientType.TO, new InternetAddress(name));
 			msg.setSubject("비밀번호 확인");
 			msg.setText(pw, "utf-8");
