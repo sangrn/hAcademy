@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+
+	<bean class="java.lang.String" id="String">
+		<constructor-arg value="문자열 값" />
+	</bean>
+
+	<bean class="com.acid6001.collection.SimpleBean"></bean>
+	<bean class="com.acid6001.collection.CollectionEx" id="ex">
+		<property name="properties">
+			<props>
+				<prop key="키1">밸류1</prop>
+				<prop key="키2">밸류2</prop>
+				<prop key="키3">밸류3</prop>
+			</props>
+		</property>
+
+		<property name="set">
+			<set>
+				<value>셋1</value>
+				<!-- <ref bean="simpleBean" /> -->
+				<value>#{simpleBean.toString()}</value>
+				<value>셋3</value>
+			</set>
+		</property>
+
+		<property name="list" ref="l">
+			<!-- <list> <value>리스트 값1</value> <value>리스트 값2</value> <ref bean="string" 
+				/> </list> -->
+		</property>
+
+		<property name="map">
+			<map>
+				<entry key="키1" value="10" />
+				<entry key-ref="string" value="20" />
+
+			</map>
+		</property>
+	</bean>
+	<util:list id="l">
+		<value>a</value>
+		<value>b</value>
+		<value>c</value>
+	</util:list>
+</beans>
+

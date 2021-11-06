@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.acid6001.ioc3.Car" id="car" p:name="아우디">
+		<!-- <property name="name" value="아우디" /> -->
+	</bean>
+	<bean class="com.acid6001.ioc3.Car" id="car1"> <!-- Car car1 = new Car1(); car1.setName("아우디1"); -->
+		<property name="name" value="아우디1" />
+	</bean>
+	<bean class="com.acid6001.ioc3.Car" id="car2" c:name-ref="str">
+		<!-- <constructor-arg> <ref bean="str"/> </constructor-arg> -->
+	</bean>
+	<bean class="com.acid6001.ioc3.Audi" id="audi" p:car-ref="car"> <!-- String str = "abcd"; String str = new String("abcd"); -->
+		<!-- <property name="car" ref="car" /> -->
+	</bean>
+	<bean class="java.lang.String" id="str" c:value="abcd">
+		<!-- <constructor-arg value="abcd" /> -->
+	</bean>
+	<bean class="java.lang.Integer" id="iii">
+		<constructor-arg>
+			<value>10</value>
+		</constructor-arg>
+
+	</bean>
+</beans>

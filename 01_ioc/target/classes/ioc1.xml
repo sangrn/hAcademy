@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.acid6001.ioc1.HyundaiMaker" id="hyundaiMaker" />
+	<bean class="com.acid6001.ioc1.KiaMaker" id="kiaMaker" />
+	<bean class="com.acid6001.ioc1.OrderManager" id="orderManager"
+		scope="prototype">
+		<property name="maker" ref="hyundaiMaker">
+		</property>
+	<!-- <property name="maker" ref="kiaMaker"> </property> -->
+
+
+	</bean>	<!-- xml은 bean 생성에 설계도 -->
+</beans>
