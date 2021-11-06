@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean class="com.acid6001.aop6.MyDependency" id="myDependency" />
+	<bean class="com.acid6001.aop6.MyBean" id="myBean">
+		<property name="dependency" ref="myDependency" />
+	</bean>
+
+	<bean class="com.acid6001.aop6.MyAdvice" id="adv" />
+
+	<aop:config>
+		<aop:pointcut expression="execution(* *(..))and args(value)"
+			id="pc" />
+		<aop:aspect ref="adv">
+			<aop:after-returning method="simple"
+				pointcut-ref="pc" />
+			<aop:after method="simple" pointcut-ref="pc" />
+		</aop:aspect>
+		<aop:aspect ref="adv">
+			<aop:around method="around" pointcut-ref="pc2"/>
+			<aop:pointcut expression="execution(* good*(..))" id="pc2" />
+		</aop:aspect>
+	</aop:config>
+
+</beans>
