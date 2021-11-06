@@ -1,0 +1,43 @@
+/* 전역 */
+.img-box {border: 1px solid black; }
+ul {list-style: none; padding: 0;}
+section {width: 700px; float: left;}
+aside {width: 200px; float: right;}
+body {margin: 0;}
+
+/* 헤더 */
+header > * > *, main {width: 987px; margin: 0 auto;}
+header > div {background:coral; border-bottom:3px solid #777; padding:30px 0; }
+header > div .img-box {width: 300px; height: 80px; margin-left: 30px; }
+header > div > div {position: relative;}
+header > div p {position: absolute; right: 50px; bottom: 10px;}
+
+header > nav {background: burlywood; border-bottom:3px solid #777; clear: both;}
+nav ul li {display: inline-block; padding:20px;}
+
+/* 푸터 */
+footer {clear: both; padding: 50px; text-align: center; background:coral; border-top:3px solid #777;}
+
+
+/* index */
+.index {padding-top: 20px;}
+.index section, .index aside {padding:20px;}
+.index section h1{height: 0; text-indent: -9999px; margin: 0;}
+.index section article .img-box {height: 150px;}
+.index section > h2 {clear: both;}
+.index section ul.width40 li {width: 330px; float: left; margin: 10px;}
+.index section ul.width40 li .img-box {height: 80px; width: 80px; float: left;}
+.index section ul.width40 li div {width: 242px; float: right;}
+.index section ul.width40 li div * {margin: 0;}
+.index section ul::after {content: ''; display: block; clear: both;}
+
+.index .width100 {text-align: center;}
+.index .width100 .img-box {height: 150px;}
+
+.index aside input[type='submit'] {padding: 20px 50px;}
+
+/* login */
+.login form{width: 400px; margin:0 auto;}
+.login h4 {margin:20px 0 10px;}
+.login input[type="text"], .login input[type="password"] {padding:8px; width: 100%; box-sizing: border-box; }
+.login button {width: 100%; box-sizing: border-box; padding:10px;}
