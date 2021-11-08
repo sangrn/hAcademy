@@ -90,6 +90,7 @@
 		<!-- End of Content Wrapper -->
 
 	</div>
+</div>
 	<!-- End of Page Wrapper -->
 <script>
 	function showImage(fileCallPath) {
